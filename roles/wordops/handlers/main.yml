@@ -1,0 +1,17 @@
+---
+# handlers file for wordops
+# service section
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+
+- name: restart "{{ wo_phpfpm }}"
+  service:
+    name: "{{ wo_phpfpm }}"
+    state: restarted
+
+- name: restart mysql
+  service:
+    name: mysql
+    state: restarted

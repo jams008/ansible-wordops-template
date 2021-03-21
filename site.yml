@@ -1,0 +1,11 @@
+---
+- name: Install Wordops, add domain
+  hosts: all
+  # remote_user: vagrant
+  # remote_user: user
+  become: yes
+  become_method: sudo
+
+  roles:
+    - wordops
+    - add_domain

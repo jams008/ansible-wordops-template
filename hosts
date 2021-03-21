@@ -1,0 +1,7 @@
+[all] # this is group
+# 192.168.33.10 ansible_connection=ssh  ansible_user=vagrant # this is worker
+8.210.207.147    ansible_connection=ssh  ansible_user=root
+
+[wordops-worker] # this is group
+# 192.168.33.10   ansible_connection=ssh  ansible_user=vagrant # this is worker
+# 8.210.207.147    ansible_connection=ssh  ansible_user=root
