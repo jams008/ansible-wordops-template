@@ -35,11 +35,11 @@
 #TODO add autocompletion /etc/bash_completion.d/wo_auto.rc to bash profile
 
 - name: Check wo stack status
-  command: wo stack status --nginx --mysql --"{{ wo_phpversion }}" --wpcli
+  command: wo stack status --nginx "{{ wo_mysql }}" --"{{ wo_phpversion }}" --wpcli
   register: wo_stack_status
 
 - name: install wo stack
-  command: wo stack install --nginx --mysql --"{{ wo_phpversion }}" --wpcli
+  command: wo stack install --nginx "{{ wo_mysql }}" --"{{ wo_phpversion }}" --wpcli
   register: wo_stack_install
   when: wo_stack_status.stdout.count('not installed') > 1
 

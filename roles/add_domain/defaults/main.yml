@@ -1,5 +1,8 @@
 ---
 # defaults file for add_domain
-wo_domain: "example.com"
+wo_domain: 
+  - "example.com"
+#  - "example2.com"
 wo_phpversion: "php" # change : php,php73, and php74
 wo_phpfpm: "php7.2-fpm" # change : php7.2-fpm,php7.3-fpm, and php7.4-fpm
+wo_mysql: "--mysql"

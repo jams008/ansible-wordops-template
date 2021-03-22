@@ -1,4 +1,4 @@
 ---
 # tasks file for add_domain
 - name: Add domain on Wordops
-  command: /usr/local/bin/wo site create "{{ wo_domain }}" --"{{ wo_phpversion }}" --mysql
+  command: /usr/local/bin/wo site create "{{ wo_domain }}" --"{{ wo_phpversion }}" "{{ wo_mysql }}"

@@ -3,4 +3,7 @@
 wo_name: "ansible"
 wo_email: "ansible@ansible.com"
 wo_phpversion: "php" # change : php,php73, and php74
-wo_phpfpm: "php7.2-fpm" # change : php7.2-fpm,php7.3-fpm, and php7.4-fpm
+wo_phpfpm: 
+  - "php7.2-fpm" # change : php7.2-fpm,php7.3-fpm, and php7.4-fpm
+#  - "php7.2-fpm" # change : php7.2-fpm,php7.3-fpm, and php7.4-fpm
+wo_mysql: "--mysql"
