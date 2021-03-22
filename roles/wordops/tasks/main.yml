@@ -43,6 +43,10 @@
   register: wo_stack_install
   when: wo_stack_status.stdout.count('not installed') > 1
 
+- name: Disable config cache on php-fpm
+  command: for PHP in '7.2' '7.3' '7.4' ; do sed -i 's/php_admin_value/;php_admin_value/g' /etc/php/$PHP/fpm/pool.d/*.conf; done;
+  register: disable_config_cache_on_php-fpm
+
 # service section
 - name: Enable and restart nginx
   service:
