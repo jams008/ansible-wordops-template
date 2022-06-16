@@ -5,13 +5,24 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [2.7, 3.7]
+        ansible-version: [2.9]
+
     steps:
-    - name: Play Ansible Playbook
-      uses: arillso/action.playbook@master
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
       with:
-        playbook: roles/*/tasks/*.yml
-        # inventory: tests/hosts.yml
-        # galaxy_file: tests/requirements.yml
-      env:
-        ANSIBLE_HOST_KEY_CHECKING: 'false'
-        ANSIBLE_DEPRECATION_WARNINGS: 'false'
+        python-version: ${{ matrix.python-version }}
+    - name: Install Ansible ${{ matrix.ansible-version }}
+      run: |
+        python -m pip install --upgrade pip
+        pip install ansible-lint ansible==${{ matrix.ansible-version }}
+    - name: Lint playbook
+      run: |
+        ansible-playbook site.yml --syntax-check
+        ansible-lint site.yml
