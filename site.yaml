@@ -1,4 +1,3 @@
----
 - name: Install Wordops, add domain
   hosts: all
   # remote_user: vagrant
