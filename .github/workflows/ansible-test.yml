@@ -10,7 +10,7 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: [3]
-        ansible-version: [2.7.13, 2.8.4]
+        ansible-version: [2.9]
 
     steps:
     - uses: actions/checkout@v1
@@ -24,5 +24,5 @@ jobs:
         pip install ansible-lint ansible==${{ matrix.ansible-version }}
     - name: Lint playbook
       run: |
-        ansible-playbook site.yml --syntax-check
-        ansible-lint site.yml
+        ansible-playbook site.yaml --syntax-check
+        ansible-lint site.yaml

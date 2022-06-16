@@ -1,4 +1,3 @@
----
 # defaults file for wordops
 wo_name: "ansible"
 wo_email: "ansible@ansible.com"

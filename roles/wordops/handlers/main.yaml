@@ -1,5 +1,5 @@
----
-# handlers file for add_domain
+# handlers file for wordops
+# service section
 - name: restart nginx
   service:
     name: nginx

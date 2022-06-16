@@ -1,4 +1,3 @@
----
 # defaults file for add_domain
 wo_domain: "example.com"
 wo_phpversion: "php" # change : php,php73, and php74
