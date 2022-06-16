@@ -9,7 +9,7 @@ jobs:
     - name: Play Ansible Playbook
       uses: arillso/action.playbook@master
       with:
-        playbook: site.yml
+        playbook: roles/*/tasks/*.yml
         # inventory: tests/hosts.yml
         # galaxy_file: tests/requirements.yml
       env:
